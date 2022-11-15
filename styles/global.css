@@ -1,35 +1,154 @@
-:root {
-    --background: rgb(224, 234, 247);
-    --header-background: rgb(254, 251, 245);
-    --primary-font: Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
-        'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
-}
-
 body {
-    font-family: var(--primary-font);
-    background: var(--background);
+    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
+    /* --color1: hsla(349, 69%, 76%, 1);
+    --color2: hsla(207, 67%, 44%, 1);
+    --color3: hsla(200, 61%, 56%, 1);
+    --color4: hsla(187, 41%, 94%, 1);
+    --color5: hsla(170, 28%, 95%, 1); */
+
+    /* --color1: hsla(45, 86%, 83%, 1);
+    --color2: hsla(135, 65%, 98%, 1);
+    --color3: hsla(315, 37%, 86%, 1);
+    --color4: hsla(45, 73%, 98%, 1);
+    --color5: hsla(224, 40%, 79%, 1); */
+
+    --header-height: 80px;
+    --shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.45);
+    --gutter: 30px;
+    --footer-height: 25px;
+
+    font-family: 'Titillium Web', sans-serif;
+    background-image: url('../assets/bg.jpg');
+    background-attachment: fixed;
+    background-size: auto;
     display: grid;
-    grid-template-rows: auto 1fr;
-}
-
-header {
-    position: sticky;
-    top: 0;
-    padding: 15px;
-    height: 80px;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    background-color: var(--header-background);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-header .logo {
-    height: 100%;
+    grid-template-columns: 200px 1fr;
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-bottom: calc(var(--footer-height));
+    /* position: absolute; */
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.457);
+    height: 100%;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: var(--gutter);
+    border: solid 2px var(--color1);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #ffffffc1;
+    border-bottom-right-radius: 20px;
+    /* position: fixed; */
+    box-shadow: var(--shadow);
+    height: 80px;
+    width: 150px;
+    z-index: 1;
+}
+
+header a {
+    font-weight: 900;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.gutter-right {
+    margin-right: 20px;
+}
+
+p {
+    margin: 0px;
+}
+
+#card-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 50px;
+}
+
+.card-template {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: inset 2px black;
+    width: 250px;
+    height: 400px;
+    text-align: center;
+}
+
+.card-template img {
+    width: 90%;
+    border-radius: 20px;
+}
+
+.card-template p {
+    padding-bottom: 10px;
+}
+
+.card-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+}
+
+.card-detail .name {
+    font-size: 3rem;
+    font-family: fantasy, serif;
+    margin-top: 40px;
+    text-decoration: underline;
+}
+
+.card-detail .type-and-subtype {
+    height: 50px;
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-detail img {
+    margin: 30px;
+    width: 60%;
+}
+
+.card-detail .text {
+    font-size: 1.2rem;
+    margin: 20px;
     padding: 20px;
+    border: solid 2px black;
+    border-radius: 5px;
+    background-color: white;
 }
