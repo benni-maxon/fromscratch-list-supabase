@@ -8,3 +8,8 @@ export async function getCards() {
     const response = await client.from('cards').select('*');
     return response.data;
 }
+
+export async function getCard(id) {
+    const response = await client.from('cards').select('*').match({ id: id }).single();
+    return response.data;
+}
