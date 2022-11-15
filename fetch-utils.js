@@ -5,7 +5,7 @@ const SUPABASE_KEY =
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getCards() {
-    const response = await client.from('cards').select('*');
+    const response = await client.from('cards').select('*').order('id');
     return response.data;
 }
 

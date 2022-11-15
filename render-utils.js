@@ -2,19 +2,20 @@ export function renderCardTemplate(card) {
     const div = document.createElement('div');
     const a = document.createElement('a');
     const img = document.createElement('img');
-    const p = document.createElement('p');
+    // const p = document.createElement('p');
 
     div.classList.add('card-template');
 
-    p.textContent = card.name;
-    img.src = `${card.img}`;
+    // p.textContent = card.name;
+    img.src = card.img;
+    img.alt = card.name;
     a.href = `./detail/?id=${card.id}`; // link to card's detail page here
 
-    div.append(p, img);
+    a.append(img);
 
-    a.append(div);
+    div.append(a);
 
-    return a;
+    return div;
 }
 
 export function renderCardDetail(card) {
