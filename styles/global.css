@@ -72,8 +72,9 @@ header a {
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 3rem;
     font-weight: bold;
+    font-family: fantasy, serif;
 }
 
 .gutter-right {
@@ -88,7 +89,7 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 50px;
 }
 
