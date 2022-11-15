@@ -1,35 +1,176 @@
-:root {
-    --background: rgb(224, 234, 247);
-    --header-background: rgb(254, 251, 245);
-    --primary-font: Corbel, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans',
-        'Bitstream Vera Sans', 'Liberation Sans', Verdana, 'Verdana Ref', sans-serif;
-}
-
 body {
-    font-family: var(--primary-font);
-    background: var(--background);
-    display: grid;
-    grid-template-rows: auto 1fr;
-}
+    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
+    /* --color1: hsla(349, 69%, 76%, 1);
+    --color2: hsla(207, 67%, 44%, 1);
+    --color3: hsla(200, 61%, 56%, 1);
+    --color4: hsla(187, 41%, 94%, 1);
+    --color5: hsla(170, 28%, 95%, 1); */
 
-header {
-    position: sticky;
-    top: 0;
-    padding: 15px;
-    height: 80px;
+    /* --color1: hsla(45, 86%, 83%, 1);
+    --color2: hsla(135, 65%, 98%, 1);
+    --color3: hsla(315, 37%, 86%, 1);
+    --color4: hsla(45, 73%, 98%, 1);
+    --color5: hsla(224, 40%, 79%, 1); */
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    --header-height: 80px;
+    --shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.45);
+    --gutter: 30px;
+    --footer-height: 25px;
 
-    background-color: var(--header-background);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-header .logo {
-    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+    background-image: url('../assets/bg.jpg');
+    background-attachment: fixed;
+    background-size: auto;
+    background-position: left;
 }
 
 main {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin-bottom: calc(var(--footer-height));
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.457);
+    height: 100%;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: var(--gutter);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffffc1;
+    border-radius: 0px 0px 20px 20px;
+    position: fixed;
+    left: 22px;
+    box-shadow: var(--shadow);
+    height: 80px;
+    width: 150px;
+    z-index: 1;
+    font-size: 2.5rem;
+    font-family: fantasy, serif;
+    border-bottom: inset 4px black;
+    border-left: inset 2px black;
+    border-right: inset 1px black;
+}
+
+h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: fantasy, serif;
+    margin-top: 60px;
+    margin-bottom: 0px;
+    border-top: inset 2px black;
+    border-bottom: inset 5px black;
+    border-left: inset 3px black;
+    border-right: inset 2px black;
+    padding: 20px 30px 0px 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.566);
+}
+
+.gutter-right {
+    margin-right: 20px;
+}
+
+p {
+    margin: 0px;
+}
+
+#card-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+}
+
+.card-template {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: inset 2px black;
+    width: 316px;
+    height: 422px;
+    text-align: center;
+    background-color: rgba(95, 81, 69, 0.696);
+}
+
+.card-template a {
+    width: 90%;
+}
+
+.card-template img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+}
+
+.card-detail .name {
+    font-size: 3rem;
+    font-family: fantasy, serif;
+    margin-top: 40px;
+    border-top: inset 2px black;
+    border-bottom: inset 4px black;
+    border-left: inset 3px black;
+    border-right: inset 2px black;
+    border-radius: 20px 20px 10px 10px;
+    padding: 20px 30px 0px 30px;
+    background-color: rgba(255, 255, 255, 0.566);
+}
+
+.card-detail .type-and-subtype {
+    height: 50px;
+    width: auto;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: inset 2px black;
+    border-bottom: inset 4px black;
+    border-left: inset 3px black;
+    border-right: inset 2px black;
+    border-radius: 10px 10px 5px 5px;
+    padding: 0px 20px 0px 20px;
+    background-color: rgba(255, 255, 255, 0.566);
+}
+
+.card-detail img {
+    margin: 30px;
+    width: 60%;
+    border-radius: 20px;
+}
+
+.card-detail .text {
+    font-size: 1.2rem;
+    margin: 20px;
     padding: 20px;
+    border-top: inset 2px black;
+    border-bottom: inset 5px black;
+    border-left: inset 3px black;
+    border-right: inset 2px black;
+    border-radius: 5px;
+    background-color: white;
 }
