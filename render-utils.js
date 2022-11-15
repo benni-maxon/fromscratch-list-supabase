@@ -8,7 +8,7 @@ export function renderCardTemplate(card) {
 
     p.textContent = card.name;
     img.src = `${card.img}`;
-    a.href = ``; // link to card's detail page here
+    a.href = `./detail/?id=${card.id}`; // link to card's detail page here
 
     div.append(p, img);
 
@@ -21,8 +21,8 @@ export function renderCardDetail(card) {
     const div = document.createElement('div');
     const img = document.createElement('img');
     const nameEl = document.createElement('p');
-    const typeEl = document.createElement('p');
-    const subtypeEl = document.createElement('p');
+    // const typeEl = document.createElement('p');
+    // const subtypeEl = document.createElement('p');
     const textEl = document.createElement('p');
     const typeAndSubtypeEl = document.createElement('div');
 
@@ -31,16 +31,16 @@ export function renderCardDetail(card) {
     nameEl.textContent = card.name;
     nameEl.classList.add('name');
 
-    typeEl.textContent = `Type: ${card.type}`;
-    typeEl.classList.add('type');
+    // typeEl.textContent = `Type: ${card.type}`;
+    // typeEl.classList.add('type');
 
-    subtypeEl.textContent = `Subtype: ${card.subtype}`;
-    subtypeEl.classList.add('subtype');
+    // subtypeEl.textContent = `Subtype: ${card.subtype}`;
+    // subtypeEl.classList.add('subtype');
 
     textEl.textContent = `Card Text: ${card.text}`;
     textEl.classList.add('text');
 
-    typeAndSubtypeEl.textContent = `${typeEl} - ${subtypeEl}`;
+    typeAndSubtypeEl.textContent = `${card.type} - ${card.subtype}`;
     typeAndSubtypeEl.classList.add('type-and-subtype');
 
     img.src = `${card.img}`;
